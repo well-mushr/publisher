@@ -1,0 +1,11 @@
+[Unit]
+Description=Publisher Service
+After=network.target
+
+[Service]
+Type=simple
+LimitNOFILE=10
+ExecStart=/bin/sh -c 'python /opt/publisher/publisher.py'
+
+[Install]
+WantedBy=multi-user.target
